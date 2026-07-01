@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SRCE | Final Year Student's Portfolio Directory — Dept. of AI &amp; Data Science</title>
+<meta name="description" content="Official Portfolio Directory of Final Year Students, Department of Artificial Intelligence & Data Science, Sardar Raja College of Engineering, Alangulam, Tenkasi.">
+<meta name="theme-color" content="#050816">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#ff3fd5;
+    --blue:#00a8ff;
+    --bg:#050816;
+    --bg-1:#0a0f24;
+    --glass:rgba(255,255,255,0.045);
+    --glass-strong:rgba(255,255,255,0.08);
+    --border:rgba(255,255,255,0.1);
+    --border-glow:rgba(255,63,213,0.35);
+    --text:#eef3ff;
+    --text-dim:#93a0c2;
+    --text-faint:#5c6690;
+    --radius-lg:24px;
+    --radius-md:16px;
+    --nav-h:72px;
+    --safe-b:env(safe-area-inset-bottom, 0px);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+    padding-bottom:calc(var(--nav-h) + var(--safe-b) + 12px);
+    position:relative;
+  }
+
+  body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(circle at 15% 8%, rgba(255,63,213,0.16), transparent 45%),
+      radial-gradient(circle at 85% 20%, rgba(0,168,255,0.16), transparent 45%),
+      radial-gradient(circle at 50% 90%, rgba(255,63,213,0.10), transparent 50%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  #particles{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+  }
+
+  .wrap{
+    position:relative;
+    z-index:1;
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 18px;
+  }
+
+  ::selection{background:var(--pink);color:#050816;}
+
+  a{color:inherit;text-decoration:none;}
+
+  /* ---------- Scrollbar ---------- */
+  ::-webkit-scrollbar{width:6px;}
+  ::-webkit-scrollbar-thumb{background:linear-gradient(var(--pink),var(--blue));border-radius:10px;}
+
+  /* ---------- Header ---------- */
+  header.site-header{
+    position:relative;
+    z-index:2;
+    padding:16px 18px 14px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    background:rgba(5,8,22,0.55);
+    border-bottom:1px solid var(--border);
+  }
+
+  .logo-badge{
+    flex:0 0 auto;
+    width:52px;height:52px;
+    border-radius:16px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(145deg, rgba(255,63,213,0.18), rgba(0,168,255,0.18));
+    border:1px solid var(--border-glow);
+    box-shadow:0 0 18px rgba(255,63,213,0.35), inset 0 0 14px rgba(0,168,255,0.15);
+    position:relative;
+  }
+  .logo-badge svg{width:30px;height:30px;}
+
+  .header-text{flex:1 1 auto;min-width:0;}
+  .college-name{
+    font-family:'Orbitron',sans-serif;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.6px;
+    line-height:1.25;
+    background:linear-gradient(90deg,#fff,#cfe4ff 60%,var(--blue));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .college-loc{
+    font-size:10.5px;
+    color:var(--text-dim);
+    margin-top:3px;
+    letter-spacing:0.3px;
+    font-family:'Rajdhani',sans-serif;
+    font-weight:600;
+  }
+
+  .dept-badge-row{
+    margin-top:9px;
+  }
+  .dept-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:'Rajdhani',sans-serif;
+    font-size:9.5px;
+    font-weight:700;
+    letter-spacing:0.8px;
+    padding:5px 10px;
+    border-radius:20px;
+    color:#fff;
+    background:linear-gradient(90deg, rgba(255,63,213,0.22), rgba(0,168,255,0.22));
+    border:1px solid rgba(255,255,255,0.14);
+  }
+  .dept-badge .dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--pink);
+    box-shadow:0 0 8px var(--pink);
+    animation:pulse-dot 1.8s infinite ease-in-out;
+  }
+  @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    z-index:1;
+    padding:44px 18px 26px;
+    text-align:center;
+    overflow:hidden;
+  }
+
+  .hero-eyebrow{
+    font-family:'Rajdhani',sans-serif;
+    font-size:11px;
+    letter-spacing:3px;
+    color:var(--text-dim);
+    font-weight:600;
+    text-transform:uppercase;
+    opacity:0;
+    animation:fadeUp .7s .1s ease forwards;
+  }
+
+  .hero h1{
+    font-family:'Orbitron',sans-serif;
+    font-weight:900;
+    font-size:clamp(28px, 8vw, 48px);
+    line-height:1.12;
+    margin-top:14px;
+    letter-spacing:0.5px;
+    background:linear-gradient(100deg, var(--pink) 0%, #fff 45%, var(--blue) 100%);
+    background-size:220% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    animation:fadeUp .8s .2s ease forwards, shine 6s linear infinite;
+    opacity:0;
+    text-shadow:0 0 42px rgba(255,63,213,0.25);
+  }
+  @keyframes shine{
+    0%{background-position:0% center;}
+    100%{background-position:220% center;}
+  }
+
+  .hero p.sub{
+    margin-top:14px;
+    color:var(--text-dim);
+    font-size:14px;
+    max-width:420px;
+    margin-inline:auto;
+    line-height:1.6;
+    opacity:0;
+    animation:fadeUp .8s .35s ease forwards;
+  }
+
+  .divider{
+    width:140px;
+    height:3px;
+    margin:24px auto 0;
+    border-radius:10px;
+    background:linear-gradient(90deg, transparent, var(--pink), var(--blue), transparent);
+    position:relative;
+    opacity:0;
+    animation:fadeUp .8s .5s ease forwards;
+  }
+  .divider::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    filter:blur(8px);
+    background:linear-gradient(90deg, transparent, var(--pink), var(--blue), transparent);
+  }
+
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  /* ---------- Search ---------- */
+  .search-section{padding:8px 18px 6px;position:relative;z-index:1;}
+  .search-box{
+    position:relative;
+    max-width:560px;
+    margin:0 auto;
+    border-radius:999px;
+    padding:2px;
+    background:linear-gradient(120deg, rgba(255,63,213,0.5), rgba(0,168,255,0.5));
+  }
+  .search-box.focused{
+    animation:borderPulse 1.6s infinite;
+  }
+  @keyframes borderPulse{
+    0%,100%{box-shadow:0 0 0px rgba(255,63,213,0);}
+    50%{box-shadow:0 0 24px rgba(0,168,255,0.55);}
+  }
+  .search-inner{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(8,11,28,0.92);
+    border-radius:999px;
+    padding:13px 18px;
+  }
+  .search-inner svg{flex:0 0 auto;width:18px;height:18px;color:var(--blue);}
+  .search-inner input{
+    flex:1;
+    background:transparent;
+    border:none;
+    outline:none;
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    font-size:15px;
+  }
+  .search-inner input::placeholder{color:var(--text-faint);}
+  .search-clear{
+    display:none;
+    flex:0 0 auto;
+    width:22px;height:22px;
+    border-radius:50%;
+    align-items:center;justify-content:center;
+    background:var(--glass-strong);
+    color:var(--text-dim);
+    font-size:13px;
+    border:none;
+    cursor:pointer;
+  }
+  .search-clear.show{display:flex;}
+  .search-count{
+    text-align:center;
+    font-size:11.5px;
+    color:var(--text-faint);
+    margin-top:10px;
+    letter-spacing:0.4px;
+    font-family:'Rajdhani',sans-serif;
+  }
+
+  /* ---------- Stats ---------- */
+  .stats-section{padding:22px 18px 6px;position:relative;z-index:1;}
+  .stats-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .stat-card{
+    border-radius:18px;
+    padding:16px 8px;
+    text-align:center;
+    background:var(--glass);
+    border:1px solid var(--border);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    position:relative;
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(16px);
+    transition:transform .3s ease;
+  }
+  .stat-card.in-view{animation:fadeUp .6s ease forwards;}
+  .stat-card::before{
+    content:'';
+    position:absolute;
+    top:-40%;left:-20%;
+    width:80%;height:80%;
+    background:radial-gradient(circle, rgba(255,63,213,0.25), transparent 70%);
+    filter:blur(10px);
+  }
+  .stat-card:nth-child(2)::before{background:radial-gradient(circle, rgba(0,168,255,0.25), transparent 70%);}
+  .stat-card:nth-child(3)::before{background:radial-gradient(circle, rgba(255,63,213,0.18), transparent 70%);}
+  .stat-num{
+    font-family:'Orbitron',sans-serif;
+    font-weight:800;
+    font-size:clamp(22px,6vw,30px);
+    background:linear-gradient(90deg,var(--pink),var(--blue));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    position:relative;
+  }
+  .stat-label{
+    margin-top:6px;
+    font-size:10px;
+    letter-spacing:0.6px;
+    color:var(--text-dim);
+    font-family:'Rajdhani',sans-serif;
+    font-weight:600;
+    text-transform:uppercase;
+    position:relative;
+  }
+
+  /* ---------- Section headers ---------- */
+  .section-title{
+    font-family:'Orbitron',sans-serif;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:1px;
+    color:var(--text);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .section-title::before{
+    content:'';
+    width:4px;height:16px;
+    border-radius:3px;
+    background:linear-gradient(var(--pink),var(--blue));
+    box-shadow:0 0 8px var(--pink);
+  }
+  .section-sub{
+    font-size:11.5px;
+    color:var(--text-faint);
+    margin-top:4px;
+    margin-left:14px;
+    font-family:'Rajdhani',sans-serif;
+    letter-spacing:0.3px;
+  }
+
+  /* ---------- Directory ---------- */
+  .directory-section{padding:34px 18px 10px;position:relative;z-index:1;}
+  .student-grid{
+    margin-top:18px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  @media(min-width:640px){
+    .student-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(min-width:960px){
+    .student-grid{grid-template-columns:repeat(3,1fr);}
+  }
+
+  .student-card{
+    --accent:var(--pink);
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:16px 16px;
+    border-radius:var(--radius-lg);
+    background:linear-gradient(160deg, var(--glass-strong), var(--glass));
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(24px);
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .student-card.in-view{animation:cardIn .55s ease forwards;}
+  @keyframes cardIn{to{opacity:1;transform:translateY(0);}}
+
+  .student-card::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:radial-gradient(160px 90px at 0% 50%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%);
+    opacity:0;
+    transition:opacity .3s ease;
+    pointer-events:none;
+  }
+  .student-card:active,
+  .student-card:hover{
+    transform:translateY(-3px);
+    border-color:color-mix(in srgb, var(--accent) 55%, var(--border));
+    box-shadow:0 8px 28px -6px color-mix(in srgb, var(--accent) 45%, transparent);
+  }
+  .student-card:hover::after{opacity:1;}
+
+  .student-card.hidden-card{display:none;}
+
+  .sc-left{min-width:0;flex:1 1 auto;}
+  .sc-reg{
+    font-family:'Rajdhani',sans-serif;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.2px;
+    color:var(--accent);
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+  }
+  .sc-reg::before{content:'REG';opacity:0.55;font-size:9px;letter-spacing:1px;color:var(--text-faint);}
+  .sc-name{
+    margin-top:4px;
+    font-size:15.5px;
+    font-weight:600;
+    color:var(--text);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-family:'Inter',sans-serif;
+  }
+  .sc-status{
+    margin-top:5px;
+    font-size:9.5px;
+    letter-spacing:0.6px;
+    font-family:'Rajdhani',sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    color:var(--text-faint);
+  }
+  .sc-status.live{color:#3be0a0;}
+
+  .sc-right{flex:0 0 auto;}
+  .platform-btn{
+    width:46px;height:46px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--accent) 30%, transparent), rgba(255,255,255,0.03));
+    border:1px solid color-mix(in srgb, var(--accent) 50%, var(--border));
+    box-shadow:0 0 0px transparent;
+    transition:box-shadow .25s ease, transform .2s ease;
+  }
+  .student-card:hover .platform-btn{
+    box-shadow:0 0 16px color-mix(in srgb, var(--accent) 60%, transparent);
+    transform:scale(1.06);
+  }
+  .platform-btn svg{width:20px;height:20px;}
+  .platform-btn.pulse{animation:btnPulse 2.4s infinite ease-in-out;}
+  @keyframes btnPulse{
+    0%,100%{box-shadow:0 0 0 0 color-mix(in srgb, var(--accent) 35%, transparent);}
+    50%{box-shadow:0 0 0 7px transparent;}
+  }
+
+  .no-results{
+    text-align:center;
+    padding:40px 20px;
+    color:var(--text-faint);
+    font-family:'Rajdhani',sans-serif;
+    font-size:14px;
+    display:none;
+  }
+  .no-results.show{display:block;}
+
+  /* ---------- About ---------- */
+  .about-section{
+    padding:50px 18px 20px;
+    position:relative;
+    z-index:1;
+  }
+  .about-card{
+    border-radius:var(--radius-lg);
+    padding:26px 22px;
+    background:linear-gradient(160deg, var(--glass-strong), var(--glass));
+    border:1px solid var(--border);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .about-card::before{
+    content:'';
+    position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 0%, rgba(255,63,213,0.14), transparent 60%);
+  }
+  .about-ring{
+    width:64px;height:64px;
+    margin:0 auto 14px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(145deg, rgba(255,63,213,0.2), rgba(0,168,255,0.2));
+    border:1px solid var(--border-glow);
+    box-shadow:0 0 20px rgba(0,168,255,0.3);
+    position:relative;
+  }
+  .about-ring svg{width:32px;height:32px;}
+  .about-card h2{
+    font-family:'Orbitron',sans-serif;
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:0.4px;
+    position:relative;
+    background:linear-gradient(90deg,#fff,var(--blue));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .about-card h3{
+    margin-top:8px;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--pink);
+    font-family:'Rajdhani',sans-serif;
+    letter-spacing:0.5px;
+    position:relative;
+  }
+  .about-card p{
+    margin-top:14px;
+    font-size:13px;
+    line-height:1.7;
+    color:var(--text-dim);
+    max-width:480px;
+    margin-inline:auto;
+    position:relative;
+  }
+  .about-tags{
+    margin-top:18px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:center;
+    position:relative;
+  }
+  .about-tags span{
+    font-size:10px;
+    letter-spacing:0.5px;
+    padding:6px 12px;
+    border-radius:20px;
+    border:1px solid var(--border);
+    color:var(--text-dim);
+    font-family:'Rajdhani',sans-serif;
+    font-weight:600;
+    background:rgba(255,255,255,0.03);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    padding:34px 18px calc(24px + var(--nav-h) + var(--safe-b));
+    color:var(--text-faint);
+    font-size:11px;
+    letter-spacing:0.4px;
+    font-family:'Rajdhani',sans-serif;
+  }
+  footer .brandline{
+    margin-top:6px;
+    font-size:10px;
+    background:linear-gradient(90deg,var(--pink),var(--blue));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    font-weight:700;
+    letter-spacing:1px;
+  }
+
+  /* ---------- Bottom Nav ---------- */
+  nav.bottom-nav{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    z-index:50;
+    height:calc(var(--nav-h) + var(--safe-b));
+    padding-bottom:var(--safe-b);
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    background:rgba(6,9,24,0.75);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-top:1px solid var(--border);
+  }
+  .nav-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+    background:none;
+    border:none;
+    color:var(--text-faint);
+    font-family:'Rajdhani',sans-serif;
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:0.4px;
+    cursor:pointer;
+    padding:6px 18px;
+    position:relative;
+    transition:color .2s ease;
+  }
+  .nav-item svg{width:20px;height:20px;}
+  .nav-item.active{color:var(--text);}
+  .nav-icon-wrap{
+    width:38px;height:38px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    transition:all .25s ease;
+  }
+  .nav-item.active .nav-icon-wrap{
+    background:linear-gradient(135deg,var(--pink),var(--blue));
+    box-shadow:0 0 18px rgba(255,63,213,0.55), 0 0 28px rgba(0,168,255,0.35);
+    animation:navGlow 2.2s infinite ease-in-out;
+  }
+  @keyframes navGlow{
+    0%,100%{box-shadow:0 0 14px rgba(255,63,213,0.5), 0 0 22px rgba(0,168,255,0.3);}
+    50%{box-shadow:0 0 22px rgba(255,63,213,0.75), 0 0 34px rgba(0,168,255,0.5);}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<header class="site-header">
+  <div class="logo-badge" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path d="M12 2 L21 6.5 V17.5 L12 22 L3 17.5 V6.5 Z" stroke="url(#lg1)" stroke-width="1.4"/>
+      <path d="M8 12.2 L11 15 L16.5 9" stroke="url(#lg2)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <defs>
+        <linearGradient id="lg1" x1="3" y1="2" x2="21" y2="22"><stop stop-color="#ff3fd5"/><stop offset="1" stop-color="#00a8ff"/></linearGradient>
+        <linearGradient id="lg2" x1="8" y1="9" x2="16.5" y2="15"><stop stop-color="#00a8ff"/><stop offset="1" stop-color="#ff3fd5"/></linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div class="header-text">
+    <div class="college-name">SARDAR RAJA COLLEGE OF ENGINEERING</div>
+    <div class="college-loc">Alangulam, Tenkasi &middot; 627808</div>
+    <div class="dept-badge-row">
+      <span class="dept-badge"><span class="dot"></span>DEPT. OF ARTIFICIAL INTELLIGENCE &amp; DATA SCIENCE</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" id="home">
+    <div class="hero-eyebrow">CLASS OF 2026 &middot; BATCH SHOWCASE</div>
+    <h1>FINAL YEAR STUDENTS'<br>PORTFOLIO DIRECTORY</h1>
+    <p class="sub">A curated, live directory of portfolio work built by the graduating AI &amp; Data Science cohort.</p>
+    <div class="divider"></div>
+  </section>
+
+  <section class="search-section">
+    <div class="search-box" id="searchBox">
+      <div class="search-inner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="searchInput" type="text" placeholder="Search by name or reg. no…" autocomplete="off" aria-label="Search students">
+        <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+      </div>
+    </div>
+    <div class="search-count" id="searchCount"></div>
+  </section>
+
+  <section class="stats-section" id="stats">
+    <div class="stats-grid">
+      <div class="stat-card" data-target="33">
+        <div class="stat-num" data-count>0</div>
+        <div class="stat-label">Total Students</div>
+      </div>
+      <div class="stat-card" data-target="21">
+        <div class="stat-num" data-count>0</div>
+        <div class="stat-label">Portfolios Live</div>
+      </div>
+      <div class="stat-card" data-target="12">
+        <div class="stat-num" data-count>0</div>
+        <div class="stat-label">Coming Soon</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="directory-section" id="directory">
+    <div class="section-title">STUDENT DIRECTORY</div>
+    <div class="section-sub">Tap a portfolio badge to open — glow color marks the hosting platform</div>
+    <div class="student-grid" id="studentGrid"></div>
+    <div class="no-results" id="noResults">No student matches your search.</div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="section-title">ABOUT</div>
+    <div class="about-card" style="margin-top:16px;">
+      <div class="about-ring">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 2 L21 6.5 V17.5 L12 22 L3 17.5 V6.5 Z" stroke="url(#lg3)" stroke-width="1.4"/>
+          <defs><linearGradient id="lg3" x1="3" y1="2" x2="21" y2="22"><stop stop-color="#ff3fd5"/><stop offset="1" stop-color="#00a8ff"/></linearGradient></defs>
+        </svg>
+      </div>
+      <h2>Sardar Raja College of Engineering</h2>
+      <h3>Department of Artificial Intelligence &amp; Data Science</h3>
+      <p>Based in Alangulam, Tenkasi, the department trains engineers in machine learning, data analytics and applied AI. This directory brings together the personal portfolio work of the final year cohort in one live, searchable space.</p>
+      <div class="about-tags">
+        <span>Alangulam, Tenkasi &middot; 627808</span>
+        <span>AI &amp; Data Science</span>
+        <span>Batch 2026</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>&copy; <span id="year"></span> Sardar Raja College of Engineering — Dept. of AI &amp; Data Science</div>
+  <div class="brandline">DESIGNED FOR FINAL YEAR STUDENTS PORTFOLIO SHOWCASE</div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Primary">
+  <button class="nav-item active" data-target="home">
+    <span class="nav-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg></span>
+    <span>Home</span>
+  </button>
+  <button class="nav-item" data-target="directory">
+    <span class="nav-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+    <span>Directory</span>
+  </button>
+  <button class="nav-item" data-target="about">
+    <span class="nav-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><circle cx="12" cy="7.5" r="0.6" fill="currentColor"/></svg></span>
+    <span>About</span>
+  </button>
+</nav>
+
+<script>
+(function(){
+  "use strict";
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ================= STUDENT DATA ================= */
+  var students = [
+    {reg:"01", name:"M.Abinaya", url:"https://abinaya-portfolioo.netlify.app"},
+    {reg:"02", name:"M.Adlin Mercy", url:"https://adlinmercy1723w.netlify.app/"},
+    {reg:"03", name:"A.Akalya", url:"https://akalya-5.github.io/Portfolio/"},
+    {reg:"04", name:"P.Anusha Lakshmi", url:"https://anushalakshmi-p.github.io/portfolio/"},
+    {reg:"05", name:"A.Anusuya", url:"https://anusuya8020-ship-it.github.io/anusuya2006/"},
+    {reg:"06", name:"A.Arockia William", url:"https://arulantr-alt.github.io/portfolio/"},
+    {reg:"07", name:"M.Arumuga Raja", url:null},
+    {reg:"08", name:"A.Ayesha Munawara", url:"https://euphonious-palmier-80ee50.netlify.app/"},
+    {reg:"09", name:"M.Deepa", url:"https://anjanadeep386-prog.github.io/deepanjana/"},
+    {reg:"10", name:"M.Durgadevi", url:"https://earnest-naiad-14abaf.netlify.app/"},
+    {reg:"11", name:"S.Fathima Parveen", url:"https://fathiimaparveen.netlify.app/"},
+    {reg:"12", name:"R.Inba Sugi", url:null},
+    {reg:"13", name:"S.Jeevitha", url:"https://jeevajeevitha42-collab.github.io/jeevitha-portfolio/"},
+    {reg:"14", name:"A.Kanishka", url:"https://kanishkaarulpandi-glitch.github.io/My-Portfolio/"},
+    {reg:"15", name:"K.Kithiyon", url:null},
+    {reg:"17", name:"M.Mahalakshmi", url:"https://mahamariappan2006-max.github.io/mahalakshmi/"},
+    {reg:"19", name:"J.Mohamed Riyas", url:null},
+    {reg:"20", name:"S.Mohamed Vasim", url:null},
+    {reg:"21", name:"H.Mohamed Wasim", url:null},
+    {reg:"22", name:"M.Mukesh", url:"https://m7190093-a11y.github.io/mukesh-portfolio/"},
+    {reg:"23", name:"S.Muthu Selvi", url:"https://willowy-froyo-98b088.netlify.app/"},
+    {reg:"24", name:"S.Neelamanikandan", url:"https://bluebell.site.je/"},
+    {reg:"25", name:"D.Ponraj", url:null},
+    {reg:"26", name:"Y.Pradeeb", url:null},
+    {reg:"27", name:"V.Pushparaj", url:null},
+    {reg:"28", name:"M.Selva Elakkiya", url:"https://elakkiyamanojkumar805-gif.github.io/elakkiya-portfolio/"},
+    {reg:"29", name:"J.Sivadharshini", url:null},
+    {reg:"30", name:"T.Sivan Perumal", url:null},
+    {reg:"32", name:"M.Sree Manju", url:"https://sreesree7092-spec.github.io/portfolio/"},
+    {reg:"33", name:"S.D.Suvi", url:null},
+    {reg:"34", name:"A.Thoufik Umer", url:"https://thoufiq-786.github.io/portfolio/"},
+    {reg:"35", name:"S.Yoga Ariharan", url:"https://ariharan.online/"},
+    {reg:"301", name:"Sivasurya R", url:"https://sivasurya-root.github.io/Portfolio/"}
+  ];
+
+  /* ================= ICONS ================= */
+  var icons = {
+    github: '<svg viewBox="0 0 24 24" fill="#fff"><path d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12c0 4.64 3.01 8.58 7.19 9.97.53.1.72-.23.72-.51 0-.25-.01-1.08-.01-1.96-2.93.53-3.68-.72-3.92-1.38-.13-.34-.7-1.38-1.2-1.66-.41-.22-1-.76-.01-.77.93-.01 1.6.86 1.82 1.21 1.06 1.79 2.76 1.28 3.44.98.11-.77.42-1.28.76-1.58-2.66-.3-5.45-1.34-5.45-5.93 0-1.31.47-2.38 1.23-3.22-.12-.3-.54-1.53.12-3.19 0 0 1-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.56 3.3-1.23 3.3-1.23.66 1.66.24 2.89.12 3.19.77.84 1.23 1.9 1.23 3.22 0 4.61-2.8 5.63-5.47 5.93.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .28.19.62.73.51A10.51 10.51 0 0 0 22.5 12c0-5.8-4.7-10.5-10.5-10.5Z"/></svg>',
+    netlify: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 3 15l3-3M18 6l3 3-3 3M9 21l1.5-4.5M15 3l-1.5 4.5M6.5 12 4 9.5M17.5 12 20 14.5M9 3l6 6-6 12L3 15Z"/></svg>',
+    globe: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/></svg>',
+    clock: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>'
+  };
+
+  var accent = {github:'#00a8ff', netlify:'#00e0a8', globe:'#ff3fd5', 'coming-soon':'#8b93a8'};
+  var statusText = {github:'PORTFOLIO LIVE', netlify:'PORTFOLIO LIVE', globe:'PORTFOLIO LIVE', 'coming-soon':'COMING SOON'};
+
+  function detectPlatform(url){
+    if(!url) return 'coming-soon';
+    if(url.indexOf('github.io') !== -1) return 'github';
+    if(url.indexOf('netlify.app') !== -1) return 'netlify';
+    return 'globe';
+  }
+
+  /* ================= RENDER CARDS ================= */
+  var grid = document.getElementById('studentGrid');
+  var frag = document.createDocumentFragment();
+
+  students.forEach(function(s, i){
+    var platform = detectPlatform(s.url);
+    var iconKey = platform === 'globe' ? 'globe' : (platform === 'coming-soon' ? 'clock' : platform);
+    var card = document.createElement(s.url ? 'a' : 'div');
+    card.className = 'student-card';
+    card.style.setProperty('--accent', accent[platform]);
+    card.setAttribute('data-name', (s.reg + ' ' + s.name).toLowerCase());
+    card.style.transitionDelay = (Math.min(i,14) * 0.02) + 's';
+    if(s.url){
+      card.href = s.url;
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+    }
+    var live = platform !== 'coming-soon';
+    card.innerHTML =
+      '<div class="sc-left">' +
+        '<div class="sc-reg">' + s.reg + '</div>' +
+        '<div class="sc-name">' + s.name + '</div>' +
+        '<div class="sc-status' + (live ? ' live' : '') + '">' + statusText[platform] + '</div>' +
+      '</div>' +
+      '<div class="sc-right">' +
+        '<div class="platform-btn' + (live ? ' pulse' : '') + '">' + icons[iconKey] + '</div>' +
+      '</div>';
+    frag.appendChild(card);
+  });
+  grid.appendChild(frag);
+
+  /* ================= SEARCH ================= */
+  var input = document.getElementById('searchInput');
+  var clearBtn = document.getElementById('searchClear');
+  var searchBox = document.getElementById('searchBox');
+  var countEl = document.getElementById('searchCount');
+  var noResults = document.getElementById('noResults');
+  var allCards = Array.prototype.slice.call(grid.querySelectorAll('.student-card'));
+
+  function updateCount(shown){
+    if(input.value.trim() === ''){
+      countEl.textContent = allCards.length + ' students in directory';
+    } else {
+      countEl.textContent = shown + ' result' + (shown === 1 ? '' : 's') + ' found';
+    }
+  }
+
+  function filterCards(){
+    var q = input.value.trim().toLowerCase();
+    clearBtn.classList.toggle('show', q.length > 0);
+    var shown = 0;
+    allCards.forEach(function(card){
+      var match = card.getAttribute('data-name').indexOf(q) !== -1;
+      card.classList.toggle('hidden-card', !match);
+      if(match) shown++;
+    });
+    noResults.classList.toggle('show', shown === 0);
+    updateCount(shown);
+  }
+
+  input.addEventListener('input', filterCards);
+  input.addEventListener('focus', function(){ searchBox.classList.add('focused'); });
+  input.addEventListener('blur', function(){ searchBox.classList.remove('focused'); });
+  clearBtn.addEventListener('click', function(){
+    input.value = '';
+    filterCards();
+    input.focus();
+  });
+  updateCount(allCards.length);
+
+  /* ================= REVEAL ON SCROLL ================= */
+  var revealTargets = allCards.concat(Array.prototype.slice.call(document.querySelectorAll('.stat-card')));
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  revealTargets.forEach(function(el){ io.observe(el); });
+
+  /* ================= COUNTERS ================= */
+  var counted = false;
+  function animateCounters(){
+    if(counted) return;
+    counted = true;
+    document.querySelectorAll('.stat-card').forEach(function(card){
+      var target = parseInt(card.getAttribute('data-target'), 10);
+      var el = card.querySelector('[data-count]');
+      var start = null;
+      var duration = 1400;
+      function step(ts){
+        if(!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target);
+        if(progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  var statsIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ animateCounters(); statsIo.disconnect(); }
+    });
+  }, {threshold:0.3});
+  statsIo.observe(document.getElementById('stats'));
+
+  /* ================= BOTTOM NAV ================= */
+  var navItems = Array.prototype.slice.call(document.querySelectorAll('.nav-item'));
+  var sections = navItems.map(function(item){ return document.getElementById(item.getAttribute('data-target')); });
+
+  navItems.forEach(function(item){
+    item.addEventListener('click', function(){
+      var targetId = item.getAttribute('data-target');
+      var el = document.getElementById(targetId);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  var navIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var id = entry.target.id;
+        navItems.forEach(function(item){
+          item.classList.toggle('active', item.getAttribute('data-target') === id);
+        });
+      }
+    });
+  }, {threshold:0.35, rootMargin:'-72px 0px -50% 0px'});
+  sections.forEach(function(s){ if(s) navIo.observe(s); });
+
+  /* ================= FLOATING PARTICLES ================= */
+  var canvas = document.getElementById('particles');
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W, H;
+
+  function resize(){
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  var colors = ['rgba(255,63,213,', 'rgba(0,168,255,'];
+  var count = window.innerWidth < 640 ? 26 : 46;
+
+  function initParticles(){
+    particles = [];
+    for(var i=0;i<count;i++){
+      particles.push({
+        x: Math.random()*W,
+        y: Math.random()*H,
+        r: Math.random()*1.8 + 0.6,
+        vy: Math.random()*0.35 + 0.08,
+        vx: (Math.random()-0.5)*0.15,
+        c: colors[i % 2],
+        a: Math.random()*0.5 + 0.15
+      });
+    }
+  }
+  initParticles();
+
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(function(p){
+      p.y -= p.vy;
+      p.x += p.vx;
+      if(p.y < -10){ p.y = H + 10; p.x = Math.random()*W; }
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = p.c + p.a + ')';
+      ctx.fill();
+    });
+    if(!reduceMotion) requestAnimationFrame(tick);
+  }
+  if(!reduceMotion){
+    requestAnimationFrame(tick);
+  } else {
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(function(p){
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = p.c + p.a + ')';
+      ctx.fill();
+    });
+  }
+
+})();
+</script>
+</body>
+</html>
